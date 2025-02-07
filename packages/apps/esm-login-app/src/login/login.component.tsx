@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Button, InlineLoading, InlineNotification, PasswordInput, TextInput, Tile } from '@carbon/react';
+import { Button, InlineLoading, InlineNotification, PasswordInput, TextInput, Tile, Heading } from '@carbon/react';
 import {
   ArrowRightIcon,
   getCoreTranslation,
@@ -14,6 +14,7 @@ import {
 import { type ConfigSchema } from '../config-schema';
 import Logo from '../logo.component';
 import Footer from '../footer.component';
+import PoweredByLogo from '../poweredBy.component';
 import styles from './login.scss';
 
 export interface LoginReferrer {
@@ -138,6 +139,9 @@ const Login: React.FC = () => {
   if (!loginProvider || loginProvider.type === 'basic') {
     return (
       <div className={styles.container}>
+        <div className={styles.center}>
+          <Logo t={t} />
+        </div>
         <Tile className={styles.loginCard}>
           {errorMessage && (
             <div className={styles.errorMessage}>
@@ -150,7 +154,7 @@ const Login: React.FC = () => {
             </div>
           )}
           <div className={styles.center}>
-            <Logo t={t} />
+            <Heading className={styles.loginTitle}>Login</Heading>
           </div>
           <form onSubmit={handleSubmit}>
             <div className={styles.inputGroup}>
@@ -219,7 +223,7 @@ const Login: React.FC = () => {
                   <Button
                     type="submit"
                     className={styles.continueButton}
-                    renderIcon={(props) => <ArrowRightIcon size={24} {...props} />}
+                    //renderIcon={(props) => <ArrowRightIcon size={24} {...props} />}
                     iconDescription="Log in"
                     disabled={!isLoginEnabled || isLoggingIn}
                   >
@@ -234,7 +238,10 @@ const Login: React.FC = () => {
             </div>
           </form>
         </Tile>
-        <Footer />
+        <div className={styles.center}>
+          <PoweredByLogo t={t} />
+        </div>
+        {/* <Footer /> */}
       </div>
     );
   }

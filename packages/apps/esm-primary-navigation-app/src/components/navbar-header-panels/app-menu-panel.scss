@@ -7,7 +7,7 @@
   height: 3rem;
   width: 100%;
   text-decoration: none;
-  color: $ui-02;
+  color: $ui-05;
   background-color: transparent;
   @extend .productiveHeading01;
 }
@@ -27,4 +27,5 @@
 
 .headerPanel {
   width: fit-content;
+  background-color: $ui-03;
 }

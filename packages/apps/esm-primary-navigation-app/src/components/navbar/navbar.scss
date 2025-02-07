@@ -1,5 +1,6 @@
 @use '@carbon/layout';
 @use '@openmrs/esm-styleguide/src/vars' as *;
+@import '~@openmrs/esm-styleguide/src/vars';
 
 .topNavActionsSlot {
   display: flex;
@@ -18,6 +19,8 @@
 
 .topNavHeader {
   top: var(--omrs-offline-banner-height);
+  border-bottom: 1px solid #a0a0a1;
+  background-color: $ui-02;
 }
 
 .activePanel {
@@ -33,4 +36,15 @@
 
 .spacedLogo {
   margin-left: layout.$spacing-05;
+}
+
+svg {
+  fill: $support-02 !important;
+}
+
+button[aria-label='Search patient'],
+button[aria-label='My Account'],
+button[aria-label='App Menu'] {
+  background-color: $ui-02;
+  border-bottom: 1px solid $ui-04;
 }
