@@ -9,16 +9,15 @@ const PoweredByLogo: React.FC<{ t: TFunction }> = ({ t }) => {
   const { poweredByLogo } = useConfig<ConfigSchema>();
   return poweredByLogo.src ? (
     <img
-      alt={poweredByLogo.alt ? t(poweredByLogo.alt) : t('openmrsLogo', 'OpenMRS logo')}
+      alt={poweredByLogo.alt ? t(poweredByLogo.alt) : t('EMR Logo', 'EMR logo')}
       className={styles.poweredByLogo}
       src={interpolateUrl(poweredByLogo.src)}
     />
   ) : (
-    <img
-      alt={poweredByLogo.alt ? t(poweredByLogo.alt) : t('openmrsLogo', 'OpenMRS logo')}
-      className={styles.poweredByLogo}
-      src={ProductOfLogo}
-    />
+    <svg role="img" className={styles.logo}>
+      <title>{t('openmrsLogo', 'OpenMRS logo')}</title>
+      <use href="#omrs-logo-full-color"></use>
+    </svg>
   );
 };
 

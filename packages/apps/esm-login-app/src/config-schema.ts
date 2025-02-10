@@ -59,7 +59,7 @@ export const configSchema = {
   logo: {
     src: {
       _type: Type.String,
-      _default: null,
+      _default: '${openmrsSpaBase}/kapsiki-healthcare-logo.png',
       _description: 'The path or URL to the logo image. If set to null, the default OpenMRS SVG sprite will be used.',
       _validators: [validators.isUrl],
     },
@@ -72,14 +72,14 @@ export const configSchema = {
   poweredByLogo: {
     src: {
       _type: Type.String,
-      _default: null,
+      _default: '${openmrsSpaBase}/ProductOfLogo.png',
       _description:
         'The path or URL to the login page footer logo image. If set to null, the default OpenMRS SVG sprite will be used.',
       _validators: [validators.isUrl],
     },
     alt: {
       _type: Type.String,
-      _default: 'Logo',
+      _default: 'EMR Logo',
       _description: 'The alternative text for the logo image, displayed when the image cannot be loaded or on hover.',
     },
   },
