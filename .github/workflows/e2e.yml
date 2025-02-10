@@ -31,20 +31,19 @@ jobs:
         with:
           filters: |
             test-sources:
-              - 'packages/**/src/**/*!(.test).ts'
-              - 'packages/**/src/**/*!(.test).js'
-              - 'packages/**/src/**/*!(.test).jsx'
-              - 'packages/**/src/**/*.scss'
-              - 'packages/**/src/routes.json'
-              - 'package.json'
-              - 'playwright.config.ts'
-              - 'e2e/**/*.ts'
-              - 'e2e/**/*.js'
-              - 'e2e/support/github/**/*.*'
-              - 'example.env'
-              - '.github/workflows/e2e.yml'
-#             - 'packages/**/src/**/*!(.test).tsx'
-
+#              - 'packages/**/src/**/*!(.test).ts'
+#              - 'packages/**/src/**/*!(.test).tsx'
+#              - 'packages/**/src/**/*!(.test).js'
+#              - 'packages/**/src/**/*!(.test).jsx'
+#              - 'packages/**/src/**/*.scss'
+#              - 'packages/**/src/routes.json'
+#              - 'package.json'
+#              - 'playwright.config.ts'
+#              - 'e2e/**/*.ts'
+#              - 'e2e/**/*.js'
+#              - 'e2e/support/github/**/*.*'
+#              - 'example.env'
+#              - '.github/workflows/e2e.yml'
 
   run-e2e-on-esm-core:
     needs: changes
