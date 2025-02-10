@@ -32,7 +32,6 @@ jobs:
           filters: |
             test-sources:
               - 'packages/**/src/**/*!(.test).ts'
-              - 'packages/**/src/**/*!(.test).tsx'
               - 'packages/**/src/**/*!(.test).js'
               - 'packages/**/src/**/*!(.test).jsx'
               - 'packages/**/src/**/*.scss'
@@ -44,6 +43,8 @@ jobs:
               - 'e2e/support/github/**/*.*'
               - 'example.env'
               - '.github/workflows/e2e.yml'
+#             - 'packages/**/src/**/*!(.test).tsx'
+
 
   run-e2e-on-esm-core:
     needs: changes
