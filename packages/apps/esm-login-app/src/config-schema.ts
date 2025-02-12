@@ -1,4 +1,5 @@
 import { validators, Type } from '@openmrs/esm-framework';
+import PoweredByLogo from './poweredBy.component';
 
 export const configSchema = {
   provider: {
@@ -58,13 +59,27 @@ export const configSchema = {
   logo: {
     src: {
       _type: Type.String,
-      _default: null,
+      _default: '${openmrsSpaBase}/kapsiki-healthcare-logo.png',
       _description: 'The path or URL to the logo image. If set to null, the default OpenMRS SVG sprite will be used.',
       _validators: [validators.isUrl],
     },
     alt: {
       _type: Type.String,
       _default: 'Logo',
+      _description: 'The alternative text for the logo image, displayed when the image cannot be loaded or on hover.',
+    },
+  },
+  poweredByLogo: {
+    src: {
+      _type: Type.String,
+      _default: '${openmrsSpaBase}/ProductOfLogo.png',
+      _description:
+        'The path or URL to the login page footer logo image. If set to null, the default OpenMRS SVG sprite will be used.',
+      _validators: [validators.isUrl],
+    },
+    alt: {
+      _type: Type.String,
+      _default: 'EMR Logo',
       _description: 'The alternative text for the logo image, displayed when the image cannot be loaded or on hover.',
     },
   },
@@ -93,7 +108,7 @@ export const configSchema = {
   },
   showPasswordOnSeparateScreen: {
     _type: Type.Boolean,
-    _default: true,
+    _default: false,
     _description:
       'Whether to show the password field on a separate screen. If false, the password field will be shown on the same screen.',
   },
@@ -116,6 +131,10 @@ export interface ConfigSchema {
     loginSuccess: string;
   };
   logo: {
+    alt: string;
+    src: string;
+  };
+  poweredByLogo: {
     alt: string;
     src: string;
   };

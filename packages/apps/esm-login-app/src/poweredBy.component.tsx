@@ -3,14 +3,15 @@ import { interpolateUrl, useConfig } from '@openmrs/esm-framework';
 import { type TFunction } from 'react-i18next';
 import { type ConfigSchema } from './config-schema';
 import styles from './login/login.scss';
+import ProductOfLogo from './assets/productoflogo.png';
 
-const Logo: React.FC<{ t: TFunction }> = ({ t }) => {
-  const { logo } = useConfig<ConfigSchema>();
-  return logo.src ? (
+const PoweredByLogo: React.FC<{ t: TFunction }> = ({ t }) => {
+  const { poweredByLogo } = useConfig<ConfigSchema>();
+  return poweredByLogo.src ? (
     <img
-      alt={logo.alt ? t(logo.alt) : t('openmrsLogo', 'OpenMRS logo')}
-      className={styles.logoImg}
-      src={interpolateUrl(logo.src)}
+      alt={poweredByLogo.alt ? t(poweredByLogo.alt) : t('EMR Logo', 'EMR logo')}
+      className={styles.poweredByLogo}
+      src={interpolateUrl(poweredByLogo.src)}
     />
   ) : (
     <svg role="img" className={styles.logo}>
@@ -20,4 +21,4 @@ const Logo: React.FC<{ t: TFunction }> = ({ t }) => {
   );
 };
 
-export default Logo;
+export default PoweredByLogo;
