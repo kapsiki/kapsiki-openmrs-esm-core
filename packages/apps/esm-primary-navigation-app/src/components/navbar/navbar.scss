@@ -42,9 +42,11 @@ svg {
   fill: $support-02 !important;
 }
 
-button[aria-label='Search patient'],
-button[aria-label='My Account'],
-button[aria-label='App Menu'] {
+button[name='SearchPatientIcon'],
+button[name='ImplementerToolsIcon'],
+button[name='AddPatientIcon'],
+button[name='User'],
+button[name='AppMenuIcon'] {
   background-color: $ui-02;
   border-bottom: 1px solid $ui-04;
 }

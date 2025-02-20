@@ -2,6 +2,7 @@
 @import '../../root.scss';
 
 .headerPanel {
+  background-color: $ui-03;
   transition: none;
 }
 
@@ -31,6 +32,10 @@
   @extend .bodyLong01;
 }
 
+.userPanelSwitcher :global(.cds--switcher__item--divider) {
+  background: $ui-05;
+}
+
 .userPanelSwitcher :global(.cds--switcher__item-link):hover:not(.cds--switcher__item-link--selected) {
   color: $field-01;
   @include brand-02(background-color);
@@ -38,7 +43,7 @@
 
 .userPanelSwitcher :global(.cds--switcher__item) svg {
   margin: 0rem 0.75rem;
-  fill: $field-01;
+  fill: $ui-02;
   flex-shrink: 0;
 }
 
@@ -49,4 +54,21 @@
 .userPanelSwitcher :global(.cds--switcher__item) button:hover {
   @include brand-03(background-color);
   color: $inverse-link;
+}
+
+.userPanelSwitcher :global([data-extension-slot-name='user-panel-slot']) button {
+  @include brand-03(color);
+}
+
+.userPanelSwitcher :global([data-extension-slot-name='user-panel-slot']) button:hover {
+  color: $ui-02;
+}
+
+.userPanelSwitcher :global([data-extension-slot-name='user-panel-bottom-slot']) button {
+  color: $danger !important;
+}
+
+.userPanelSwitcher :global([data-extension-slot-name='user-panel-bottom-slot']) button:hover {
+  color: $ui-02 !important;
+  background-color: $danger;
 }
